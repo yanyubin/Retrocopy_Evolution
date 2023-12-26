@@ -169,7 +169,7 @@ p5 <- exp_plot("NucleusLongnonpolya", "retro", 1.5, 2, 0.01, "Nucleus polyA-")
 p6 <- exp_plot("CytosolLongnonpolya", "retro", 0.35, 0.8, 0.004, "Cytosol polyA-")
 
 library(ggpubr)
-ggarrange(p1, p2, p2, p4, p5, p6, nrow = 2, ncol = 3, common.legend = TRUE)
+ggarrange(p1, p2, p3, p4, p5, p6, nrow = 2, ncol = 3, common.legend = TRUE)
 ggsave("plots/figS12.pdf", width = 28, height = 20)
 
 # Parental genes
@@ -180,7 +180,7 @@ p4 <- exp_plot("CellLongnonpolya", "parent", 13, 15, 0.04, "Cell polyA-")
 p5 <- exp_plot("NucleusLongnonpolya", "parent", 9, 10, 0.04, "Nucleus polyA-")
 p6 <- exp_plot("CytosolLongnonpolya", "parent", 8.5, 10, 0.04, "Cytosol polyA-")
 
-ggarrange(p1, p2, p2, p4, p5, p6, nrow = 2, ncol = 3, common.legend = TRUE)
+ggarrange(p1, p2, p3, p4, p5, p6, nrow = 2, ncol = 3, common.legend = TRUE)
 ggsave("plots/figS13.pdf", width = 28, height = 20)
 
 
