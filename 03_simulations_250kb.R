@@ -1,6 +1,6 @@
 ########## Simulations at 250 kb ##########
 
-##### Generate dataframse with protein coding genes #####
+##### Generate dataframes with protein coding genes #####
 
 # A function to get protein-coding gene coordinates from gtf file
 get_pcgene_coords <- function(gtf, chroms) {
@@ -273,7 +273,7 @@ ggarrange(p1, p2, p3, p4, p5, p6,
 ggsave("./plots/figS3.pdf", width = 12, height = 8)
 
 
-# Other mammales
+# Other mammals
 p1 <- sim_plot(mouse_retro, "CH12.LX", sim_results, 16, 1, 25, 1000)
 p2 <- sim_plot(chimp_retro, "Chimp", sim_results, 16, 1, 20, 1000)
 p3 <- sim_plot(macaque_retro, "Macaque_CP", sim_results, 16, 1, 25, 1000)

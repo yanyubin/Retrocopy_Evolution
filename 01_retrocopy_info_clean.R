@@ -1,6 +1,6 @@
 ########## Retrocopy information clean up ##########
 
-# A function to read retrocopy info from Table S1 of Carellie et al. (2016)
+# A function to read retrocopy info from Table S1 of Carelli et al. (2016)
 read_Carelli2016 <- function(sp = "Human", chroms) {
   require(tidyverse)
   require(readxl)
@@ -11,12 +11,12 @@ read_Carelli2016 <- function(sp = "Human", chroms) {
   )
   # Remove the first NA row in the excel sheet
   df <- df[2:nrow(df), ] %>%
-    # change chromsome name style
+    # change chromosome name style
     dplyr::mutate(
       chr = paste0("chr", chr),
       parental_chr = paste0("chr", parental_chr)
     ) %>%
-    # Filter interchromsomal pairs and remove pairs not located on chromosome 1-22 and X
+    # Filter interchromosomal pairs and remove pairs not located on chromosome 1-22 and X
     dplyr::filter(chr != parental_chr, chr %in% chroms, parental_chr %in% chroms) %>%
     dplyr::select(!c(parental_protein, comments))
 
@@ -176,7 +176,7 @@ macaque_retro <- macaque_retro %>% inner_join(macaque_genes, by = c("parentID", 
 
 
 # Because the genomic coordinates of Macaque HiC data is based on rheMac8,
-# the coordiantes of Chimp retrocopies and genes need to be converted from MMUL_1 to rheMac8
+# the coordinates of Chimp retrocopies and genes need to be converted from MMUL_1 to rheMac8
 
 macaque_retro <- convert_coords(
   "data/Carelli2016/macaque_retro_rheMac8.bed",

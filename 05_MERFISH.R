@@ -55,7 +55,7 @@ write_tsv(
 
 
 
-##### Comapare spatial distance #####
+##### Compare spatial distance #####
 library(tidyverse)
 human_retro_hg38 <- read_tsv("data/interchrom_contacts/FISH/human_retro_inter_hg38.bedpe") %>%
   dplyr::rename(retroChr = `#retroChr`)
